@@ -80,7 +80,7 @@ stroke-width='15' fill='none'/>
 
      xhttp.onreadystatechange = function(e) {
 
-      if (xhttp.status == 200 || 404) {
+      if (xhttp.status == 200 | 404) {
 
         if(onOff == 'off'){onOff = 'on';
 
@@ -104,7 +104,7 @@ stroke-width='15' fill='none'/>
 
          else if(onOff == 'on'){link = '/LED=OFF';}
 
- xhttp.open('GET', link , true);
+ xhttp.open('GET', "" , true);
 
     xhttp.send();
 
