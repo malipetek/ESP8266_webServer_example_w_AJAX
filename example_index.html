@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+
+ <html>
+
+ <style> html{
+
+ height: 100%;
+
+ background-color: #ff9d79;
+
+ display: flex;
+
+ align-items: center;
+
+ justify-content: center;}
+
+ </style>
+
+ <svg viewBox='0 0 286 398'
+
+  xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+
+xml:space='preserve'
+
+  x='0px' y='0px' width='286px' height='398px'
+
+ >
+
+  <g id='Layer%201'>
+
+    <path id='Ellipse' d='M 95.2857 282.7273 C 93.8259 205.9716 33 200.9362 33
+
+142.8182 C 33 84.7002 86.1001 34 142 34 C 197.8999 34 251 84.7002 251 142.8182 C 251 200.9362
+
+188.3161 205.9716 188.7143 282.7273 L 95.2857 282.7273 Z' stroke='#ffffff' stroke-width='15'
+
+fill='#aaaaaa'/>
+
+    <path d='M 95.2857 282.7273 L 95.2857 344.9091 L 142 376 L 188.7143
+
+344.9091 L 188.7143 282.7273 L 95.2857 282.7273 Z' stroke='#000000' stroke-width='15'
+
+fill='#aaaaaa'/>
+
+    <path id='wire' d='M 110.8571 271.1818 L 110.8571 142.8182
+
+L 126.4286 189.4545 L 142 142.8182 L 157.5714 189.4545 L 173.1429 142.8182 L 173.1429
+
+271.1818 ' stroke='#555555' stroke-width='11' fill='none'/>
+
+    <path id='Line' d='M 103.5 350 L 187.5 311 ' stroke='#000000'
+
+stroke-width='15' fill='none'/>
+
+    <path id='Line2' d='M 98 323.5 L 179 285.5 ' stroke='#000000'
+
+stroke-width='15' fill='none'/>
+
+  </g>
+
+ </svg>
+
+ <script>
+
+    document.onreadystatechange = function(){
+
+   if(document.readyState == 'complete'){
+
+  var bulb = document.getElementsByTagName('svg')[0];
+
+ var bulbElipse = document.getElementsByTagName('svg')[0].getElementById('Ellipse');
+
+     var wire = document.getElementsByTagName('svg')[0].getElementById('wire');
+
+     var onOff = 'off';
+
+ bulb.onclick = function(){
+
+     var xhttp = new XMLHttpRequest();
+
+     xhttp.onreadystatechange = function(e) {
+
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+        if(onOff == 'off'){onOff = 'on';
+
+        bulbElipse.style.fill = 'yellow';
+
+        wire.style.stroke = 'orange';}
+
+        else if(onOff == 'on'){onOff = 'off';
+
+        bulbElipse.style.fill = '#aaaaaa';
+
+        wire.style.stroke = '#555555';}
+
+        }
+
+    };
+
+     var link;
+
+         if(onOff == 'off'){link = '/LED=ON';}
+
+         else if(onOff == 'on'){link = '/LED=OFF';}
+
+ xhttp.open('GET', link, true);
+
+    xhttp.send();
+
+ } }}
+
+  </script>
+
+ </html>
