@@ -79,6 +79,7 @@ stroke-width='15' fill='none'/>
      var xhttp = new XMLHttpRequest();
 
      xhttp.onreadystatechange = function(e) {
+      	if (xhttp.readyState == 4 && xhttp.status == 200) {
 
         if(onOff == 'off'){onOff = 'on';
 
@@ -93,7 +94,7 @@ stroke-width='15' fill='none'/>
         wire.style.stroke = '#555555';}
 
     };
-
+     }
      var link;
 
          if(onOff == 'off'){link = '/LED=ON';}
